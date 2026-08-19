@@ -32,7 +32,7 @@
         <div class="marquee-bar" role="region" aria-label="System Announcement Ticker">
             <div class="marquee-content">
                 <span class="ticker-item"><span class="ticker-badge">LIVE FEED</span>CYBER FREQUENCY 2000 // BROADCASTING ON 144.00 MHz ARGON FREQUENCY</span>
-                <span class="ticker-item"><span class="ticker-badge">TIME</span><span id="cyber-live-time">2000.01.01 // 00:00:00.00 EST</span></span>
+                <span class="ticker-item"><span class="ticker-badge">TIME</span><span id="cyber-live-time">2000.01.01 // 00:00:00.00 LOCAL</span></span>
                 <span class="ticker-item"><span class="ticker-badge">SYSTEM</span><span id="cyber-ping-stat">PING: 24ms [STABLE]</span></span>
                 <span class="ticker-item"><span class="ticker-badge">SECURITY</span>SSL MATRIX ENCRYPTION // 2048-BIT QUANTUM HASH ACTIVE</span>
                 <span class="ticker-item"><span class="ticker-badge">ALERT</span>NEXT UNDERGROUND RAVE: NEO-TOKYO WAREHOUSE SECTOR 7 // TICKETS LIVE</span>
@@ -486,7 +486,7 @@
                             <h2 class="chrome-text text-center mb-2" style="font-size: 2rem;">REQUEST VIP ENCRYPTED ACCESS</h2>
                             <p class="text-center text-secondary small mb-4 font-lcd">JOIN THE DECENTRALIZED CYBER RAVE MATRIX // RECEIVE MASTER TAPES &amp; LOCATION COORDINATES</p>
 
-                            <form id="vip-guestbook-form" novalidate>
+                            <div id="vip-guestbook-form">
                                 <div class="cyber-form-group">
                                     <label for="cyber-alias" class="cyber-label">AGENT CODENAME / CYBER ALIAS:</label>
                                     <input type="text" id="cyber-alias" class="cyber-input" placeholder="e.g. CYBER_NOMAD_99" required>
@@ -519,12 +519,12 @@
                                     </label>
                                 </div>
 
-                                <button type="submit" class="btn-cyber btn-cyber-magenta w-100 py-2 fs-6">
-                                    TRANSMIT ENCRYPTED CLEARANCE REQUEST
+                                <button type="button" class="btn-cyber btn-cyber-magenta w-100 py-2 fs-6" disabled>
+                                    TRANSMISSION DISABLED // DEMO ONLY
                                 </button>
 
                                 <div id="form-status-feedback" class="form-status-msg" role="status" aria-live="polite"></div>
-                            </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -576,7 +576,7 @@
 
 
     <!-- Bootstrap 5 Bundle JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1N7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- Custom Main JS -->
     <script src="js/main.js"></script>
