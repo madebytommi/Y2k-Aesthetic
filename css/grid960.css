@@ -32,7 +32,7 @@
     float: left;
     margin-left: 10px;
     margin-right: 10px;
-    box-sizing: border-box;
+    box-sizing: content-box;
 }
 
 .grid_1  { width: 60px; }
@@ -127,7 +127,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
     .grid_1,
     .grid_2,
     .grid_3,
