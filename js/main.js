@@ -13,6 +13,10 @@
     function initClock() {
         const timeEl = document.getElementById("cyber-live-time");
         const pingEl = document.getElementById("cyber-ping-stat");
+        const timeZonePart = new Intl.DateTimeFormat(undefined, { timeZoneName: "short" })
+            .formatToParts(new Date())
+            .find((part) => part.type === "timeZoneName");
+        const timeZone = timeZonePart ? timeZonePart.value : "LOCAL";
 
         function update() {
             const now = new Date();
@@ -25,7 +29,7 @@
             const ms = String(Math.floor(now.getMilliseconds() / 10)).padStart(2, "0");
 
             if (timeEl) {
-                timeEl.textContent = `${year}.${month}.${day} // ${hours}:${minutes}:${seconds}.${ms} EST`;
+                timeEl.textContent = `${year}.${month}.${day} // ${hours}:${minutes}:${seconds}.${ms} ${timeZone}`;
             }
 
             if (pingEl && Math.random() < 0.05) {
@@ -41,6 +45,12 @@
     // ==========================================
     // 2. CYBER HUD NOTIFICATION TOAST SYSTEM
     // ==========================================
+    function escapeHtml(value) {
+        const element = document.createElement("div");
+        element.textContent = String(value);
+        return element.innerHTML;
+    }
+
     function showCyberNotification(title, message, format) {
         let container = document.querySelector(".cyber-toast-container");
         if (!container) {
@@ -54,15 +64,19 @@
         toast.setAttribute("role", "alert");
         toast.setAttribute("aria-live", "assertive");
 
+        const safeTitle = escapeHtml(title);
+        const safeMessage = escapeHtml(message);
+        const safeFormat = format ? escapeHtml(format) : "";
+
         toast.innerHTML = `
             <div class="cyber-toast-header">
                 <span>⚡ CYBER_ARCHIVE_TRANSFER.EXE</span>
                 <button type="button" class="cyber-toast-close" aria-label="Close Notification">✕</button>
             </div>
             <div class="cyber-toast-body">
-                <div style="color: var(--y2k-cyan); font-weight: 700; margin-bottom: 4px;">► [${title}]</div>
-                <div>${message}</div>
-                ${format ? `<div style="color: var(--y2k-lime); font-size: 0.8rem; margin-top: 4px;">FORMAT: [${format}] // QUANTUM DECRYPTION 100% COMPLETE</div>` : ""}
+                <div style="color: var(--y2k-cyan); font-weight: 700; margin-bottom: 4px;">► [${safeTitle}]</div>
+                <div>${safeMessage}</div>
+                ${safeFormat ? `<div style="color: var(--y2k-lime); font-size: 0.8rem; margin-top: 4px;">FORMAT: [${safeFormat}] // QUANTUM DECRYPTION 100% COMPLETE</div>` : ""}
             </div>
             <div class="cyber-toast-progress"></div>
         `;
@@ -155,44 +169,16 @@
     // ==========================================
     function initGuestbookForm() {
         const form = document.getElementById("vip-guestbook-form");
-        const statusMsg = document.getElementById("form-status-feedback");
-
         if (!form) return;
+
+        const submitButton = form.querySelector('[type="submit"]');
+        if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "TRANSMISSION DISABLED // DEMO ONLY";
+        }
 
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-
-            const aliasInput = document.getElementById("cyber-alias");
-            const emailInput = document.getElementById("cyber-email");
-            const levelSelect = document.getElementById("clearance-level");
-            const messageInput = document.getElementById("cyber-msg");
-
-            const alias = aliasInput ? aliasInput.value.trim() : "";
-            const email = emailInput ? emailInput.value.trim() : "";
-            const level = levelSelect ? levelSelect.value : "LEVEL-1";
-            const message = messageInput ? messageInput.value.trim() : "";
-
-            if (!alias || !email || !message) {
-                if (statusMsg) {
-                    statusMsg.className = "form-status-msg error";
-                    statusMsg.innerHTML = "► ERROR: ALL CYBER CLEARANCE FIELDS REQUIRED!";
-                }
-                return;
-            }
-
-            // Simulate Successful Encrypted Transmission
-            if (statusMsg) {
-                statusMsg.className = "form-status-msg success";
-                statusMsg.innerHTML = `► TRANSMISSION CONFIRMED // WELCOME AGENT [${alias.toUpperCase()}] // ${level} // ACCESS KEY SENT TO ${email}`;
-            }
-
-            showCyberNotification(
-                `VIP CLEARANCE GRANTED // AGENT ${alias.toUpperCase()}`,
-                `Secure handshake confirmed. Neural connection established with Cyber Frequency Sound Labs.`,
-                level
-            );
-
-            form.reset();
         });
     }
 
