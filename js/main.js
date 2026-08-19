@@ -62,9 +62,9 @@
                 <button type="button" class="cyber-toast-close" aria-label="Close Notification">✕</button>
             </div>
             <div class="cyber-toast-body">
-                <div style="color: var(--y2k-cyan); font-weight: 700; margin-bottom: 4px;">► [${safeTitle}]</div>
+                <div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 4px;">► [${safeTitle}]</div>
                 <div>${safeMessage}</div>
-                ${safeFormat ? `<div style="color: var(--y2k-lime); font-size: 0.8rem; margin-top: 4px;">FORMAT: [${safeFormat}] // QUANTUM DECRYPTION 100% COMPLETE</div>` : ""}
+                ${safeFormat ? `<div style="color: var(--status-green); font-size: 0.8rem; margin-top: 4px;">FORMAT: [${safeFormat}] // TRANSFER COMPLETE</div>` : ""}
             </div>
             <div class="cyber-toast-progress"></div>
         `;
@@ -110,7 +110,7 @@
 
                 showCyberNotification(
                     `ACQUIRED: ${releaseId} // ${releaseTitle}`,
-                    `Encrypted master audio stream unlocked. Master tape added to your local neural cache.`,
+                    "Master audio stream unlocked. Release added to your local archive.",
                     releaseFormat
                 );
             });
@@ -136,8 +136,8 @@
 
                 showCyberNotification(
                     `TOUR MATRIX PASS // ${city.toUpperCase()}`,
-                    `VIP access credentials allocated. Coordinates and argon laser entry key dispatched to terminal buffer.`,
-                    "SECTOR CLEARANCE GRANTED"
+                    "VIP pass reserved. Coordinates and entry code loaded to terminal buffer.",
+                    "ACCESS GRANTED"
                 );
             });
         });
