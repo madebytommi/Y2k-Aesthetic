@@ -12,15 +12,10 @@
     --y2k-magenta: #ff007f;
     --y2k-magenta-glow: rgba(255, 0, 127, 0.6);
     --y2k-purple: #7928ca;
-    --y2k-purple-dark: #220538;
     --y2k-lime: #ccff00;
     --y2k-yellow: #ffe600;
-    --y2k-silver: #d4e0e8;
     --y2k-dark: #07080f;
     --y2k-dark-card: rgba(12, 16, 28, 0.88);
-    --y2k-chrome-start: #ffffff;
-    --y2k-chrome-mid: #94b9d8;
-    --y2k-chrome-dark: #1e293b;
     --font-display: 'Audiowide', 'Orbitron', cursive, sans-serif;
     --font-heading: 'Orbitron', 'Audiowide', sans-serif;
     --font-mono: 'VT323', 'Space Mono', monospace;
@@ -105,16 +100,6 @@ body {
     opacity: 0.65;
 }
 
-.crt-flicker {
-    animation: crtFlicker 0.15s infinite;
-}
-
-@keyframes crtFlicker {
-    0% { opacity: 0.98; }
-    50% { opacity: 1; }
-    100% { opacity: 0.97; }
-}
-
 /* ==========================================
    CHROME & METALLIC TYPOGRAPHY
    ========================================== */
@@ -136,44 +121,6 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 2px 4px rgba(0, 240, 255, 0.7)) drop-shadow(0 0 15px rgba(121, 40, 202, 0.5));
-}
-
-.chrome-text-gold {
-    font-family: var(--font-display);
-    font-weight: 900;
-    text-transform: uppercase;
-    background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #fef08a 25%,
-        #eab308 48%,
-        #422006 50%,
-        #facc15 52%,
-        #fef9c3 80%,
-        #ffffff 100%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 6px rgba(234, 179, 8, 0.7));
-}
-
-.neon-cyan {
-    color: var(--y2k-cyan);
-    text-shadow: 0 0 6px var(--y2k-cyan), 0 0 15px var(--y2k-cyan);
-}
-
-.neon-magenta {
-    color: var(--y2k-magenta);
-    text-shadow: 0 0 6px var(--y2k-magenta), 0 0 15px var(--y2k-magenta);
-}
-
-.neon-lime {
-    color: var(--y2k-lime);
-    text-shadow: 0 0 6px var(--y2k-lime), 0 0 15px var(--y2k-lime);
-}
-
-.font-tech {
-    font-family: var(--font-heading);
 }
 
 .font-lcd {
@@ -339,11 +286,6 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 16px rgba(121, 40, 202, 0.35);
 }
 
-.cyber-window.magenta-tint {
-    border-color: var(--y2k-magenta);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), 0 0 16px rgba(255, 0, 127, 0.35);
-}
-
 .cyber-window-header {
     background: linear-gradient(90deg, #1b263b 0%, #0d1b2a 100%);
     border-bottom: 1px solid var(--y2k-cyan);
@@ -356,11 +298,6 @@ body {
 .purple-tint .cyber-window-header {
     border-bottom-color: var(--y2k-purple);
     background: linear-gradient(90deg, #3c096c 0%, #10002b 100%);
-}
-
-.magenta-tint .cyber-window-header {
-    border-bottom-color: var(--y2k-magenta);
-    background: linear-gradient(90deg, #590d22 0%, #1f040c 100%);
 }
 
 .window-title {
@@ -884,66 +821,6 @@ body {
 }
 
 /* ==========================================
-   CYBER HARDWARE & ARTIFACTS
-   ========================================== */
-.hardware-card {
-    background: rgba(11, 15, 25, 0.95);
-    border: 1px solid var(--y2k-purple);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
-    padding: 1.5rem;
-    position: relative;
-    height: 100%;
-    transition: all 0.3s;
-}
-
-.hardware-card:hover {
-    border-color: var(--y2k-magenta);
-    box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
-}
-
-.hardware-icon-box {
-    width: 60px;
-    height: 60px;
-    background: rgba(121, 40, 202, 0.2);
-    border: 1px solid var(--y2k-purple);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.hardware-title {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    color: #ffffff;
-    margin-bottom: 0.5rem;
-}
-
-.hardware-spec-list {
-    list-style: none;
-    margin: 1rem 0;
-    padding: 0;
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-    color: #cbd5e1;
-}
-
-.hardware-spec-list li {
-    margin-bottom: 6px;
-    position: relative;
-    padding-left: 18px;
-}
-
-.hardware-spec-list li::before {
-    content: "►";
-    position: absolute;
-    left: 0;
-    color: var(--y2k-cyan);
-    font-size: 0.8rem;
-}
-
-/* ==========================================
    WORLD RAVE TOUR MATRIX TABLE
    ========================================== */
 .matrix-table-wrap {
@@ -1194,45 +1071,6 @@ body {
     font-family: var(--font-mono);
     font-size: 0.95rem;
     color: #64748b;
-}
-
-/* ==========================================
-   MODAL DIALOG (RETRO CYBER HUD)
-   ========================================== */
-.cyber-modal-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(6px);
-    z-index: 10000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-}
-
-.cyber-modal-backdrop.active {
-    display: flex;
-}
-
-.cyber-modal {
-    background: #0b0f19;
-    border: 2px solid var(--y2k-cyan);
-    box-shadow: 0 0 40px rgba(0, 240, 255, 0.5);
-    width: 100%;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-    position: relative;
-    animation: modalPop 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes modalPop {
-    from { transform: scale(0.85); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
 }
 
 /* ==========================================
