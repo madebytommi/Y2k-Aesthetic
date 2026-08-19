@@ -44,7 +44,7 @@ This is still a pretty simple static front-end project:
 - HTML5
 - CSS3
 - vanilla JavaScript
-- Bootstrap 5.3.3
+- Bootstrap 5.3.3 CSS utilities
 - Google Fonts for the main display type
 - a custom 12-column 960 Grid System stylesheet
 
@@ -70,7 +70,7 @@ The section near the bottom is styled like an old futuristic operating-system wi
 
 ### Retro web details
 
-I also kept some intentionally goofy touches like the fake webring, Netscape/Y2K/MP3-style badges, system ticker, chrome starbursts, and the very serious-looking "quantum" security messages. They are supposed to be a little ridiculous.
+I also kept some intentionally goofy touches like the fake webring, Netscape/Y2K/MP3-style badges, system ticker, chrome starbursts, and the overly serious security and system messages. They are supposed to be a little ridiculous.
 
 ## Project structure
 
