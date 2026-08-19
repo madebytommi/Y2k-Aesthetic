@@ -1,12 +1,12 @@
 # Y2K Aesthetic // Cyber Frequency 2000
 
-A little Y2K/cyber-rave web design experiment built around the kind of internet aesthetic that felt futuristic around the late 1990s and early 2000s: chrome, neon, CRT effects, ridiculous system messages, tiny badges, rave flyers, and a 960px grid.
+A little Y2K/cyber-rave web design experiment built around the kind of internet aesthetic that felt futuristic around the late 1990s and early 2000s: chrome, CRT effects, tiny badges, rave flyers, CD-ROM interfaces, chunky controls, and a 960px grid.
 
 ## About this project
 
 This is actually an older project of mine that had been sitting around for years.
 
-I recently pulled it back out, updated some of it, cleaned up a few things, and decided to finally put it on GitHub instead of leaving it buried on a drive somewhere. The version here is therefore not meant to be a perfectly preserved snapshot of the original project. It is more of a refreshed version of something I made a long time ago.
+I recently pulled it back out, updated some of it, cleaned up a few things, and decided to finally put it on GitHub instead of leaving it buried on a drive somewhere. The version here is not meant to be a perfectly preserved snapshot of the original project. It is more of a refreshed version of something I made a long time ago.
 
 I wasn't trying to build a real music platform or anything especially serious with this. It was mostly a design experiment and an excuse to lean all the way into a very specific era of web design that I still think is fun.
 
@@ -14,23 +14,28 @@ The fictional site itself is called **Cyber Frequency 2000**, an underground ele
 
 ## What I was going for
 
-The whole idea was to make the page feel like somebody in 2000 was trying very hard to show you what the future was going to look like.
+The basic idea was to make the page feel like somebody around 2000 or 2001 was trying very hard to show you what the future was going to look like.
+
+The refreshed version leans more toward the actual turn-of-the-millennium tech look I remember: black plastic, brushed metal, electric blue controls, orange accents, green LCD-style status text, old web fonts, and slightly overdone Photoshop-style chrome.
 
 That means things like:
 
 - chrome and metallic typography
-- neon cyan, magenta, purple, and lime
-- CRT scanlines and glowing grid backgrounds
+- black and charcoal interface panels
+- silver bevels and hard-edged controls
+- electric blue with orange accents
+- restrained green LCD/status displays
+- CRT scanlines
 - fake system readouts and live status messages
 - old-school 88x31-style web badges
 - CD jewel-case artwork
-- rave/club flyer influences
+- rave/club flyer and CD-ROM influences
 - intentionally over-the-top cyber terminology
 - a classic 960px grid layout
 
-There are also a few deliberately fake pieces of functionality to make the page feel more alive, including simulated music acquisitions, tour-pass reservations, a live clock/ping display, toast notifications, and a fake VIP clearance form.
+There are also a few deliberately fake pieces of functionality to make the page feel more alive, including simulated music acquisitions, tour-pass reservations, a live clock/ping display, and toast notifications.
 
-None of the releases, tour dates, passes, downloads, or form submissions are real. They are just part of the demo.
+None of the releases, tour dates, passes, or downloads are real. They are just part of the demo.
 
 ## Built with
 
@@ -40,7 +45,7 @@ This is still a pretty simple static front-end project:
 - CSS3
 - vanilla JavaScript
 - Bootstrap 5.3.3
-- Google Fonts
+- Google Fonts for the main display type
 - a custom 12-column 960 Grid System stylesheet
 
 There is no framework, database, backend, build process, account system, or actual checkout/download system.
@@ -53,7 +58,7 @@ A big part of the layout uses a traditional 12-column, 960px grid. I kept that b
 
 ### Audio Vault
 
-The page includes twelve fictional releases presented as holographic/chrome CD-style cards. The buttons trigger JavaScript UI feedback and notifications, but they do not download or purchase anything.
+The page includes twelve fictional releases presented as CD-style cards. The buttons trigger JavaScript UI feedback and notifications, but they do not download or purchase anything.
 
 ### Tour Matrix
 
@@ -61,7 +66,7 @@ There is a fake underground tour section with locations such as Tokyo, Berlin, L
 
 ### VIP Clearance Portal
 
-The form near the bottom is intentionally styled like an old futuristic operating-system window. Submitting it only triggers front-end validation and a simulated success message. Nothing is sent anywhere.
+The section near the bottom is styled like an old futuristic operating-system window. It looks like a form for the sake of the design, but it is intentionally disabled and cannot submit anything.
 
 ### Retro web details
 
