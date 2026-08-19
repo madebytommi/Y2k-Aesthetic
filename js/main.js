@@ -1,7 +1,7 @@
 /**
  * CYBER FREQUENCY 2000 // JAVASCRIPT ENGINE
  * Real-time Cyber HUD Tickers, Master Tape Release Acquisitions,
- * Tour Matrix Pass Reservations & VIP Guestbook System
+ * Tour Matrix Pass Reservations
  */
 
 (function () {
@@ -165,30 +165,11 @@
     }
 
     // ==========================================
-    // 5. VIP GUESTBOOK CLEARANCE FORM
-    // ==========================================
-    function initGuestbookForm() {
-        const form = document.getElementById("vip-guestbook-form");
-        if (!form) return;
-
-        const submitButton = form.querySelector('[type="submit"]');
-        if (submitButton) {
-            submitButton.disabled = true;
-            submitButton.textContent = "TRANSMISSION DISABLED // DEMO ONLY";
-        }
-
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-        });
-    }
-
-    // ==========================================
     // INITIALIZATION ON DOM READY
     // ==========================================
     document.addEventListener("DOMContentLoaded", () => {
         initClock();
         initReleaseAcquisitions();
         initTourPasses();
-        initGuestbookForm();
     });
 })();
