@@ -1,15 +1,6 @@
-/**
- * CYBER FREQUENCY 2000 // JAVASCRIPT ENGINE
- * Real-time Cyber HUD Tickers, Master Tape Release Acquisitions,
- * Tour Matrix Pass Reservations
- */
-
 (function () {
     "use strict";
 
-    // ==========================================
-    // 1. LIVE CYBER CLOCK & PING TICKER
-    // ==========================================
     function initClock() {
         const timeEl = document.getElementById("cyber-live-time");
         const pingEl = document.getElementById("cyber-ping-stat");
@@ -42,9 +33,6 @@
         update();
     }
 
-    // ==========================================
-    // 2. CYBER HUD NOTIFICATION TOAST SYSTEM
-    // ==========================================
     function escapeHtml(value) {
         const element = document.createElement("div");
         element.textContent = String(value);
@@ -90,7 +78,6 @@
 
         container.appendChild(toast);
 
-        // Auto remove after 3.8s
         setTimeout(() => {
             if (toast.parentNode) {
                 toast.style.opacity = "0";
@@ -101,9 +88,6 @@
         }, 3800);
     }
 
-    // ==========================================
-    // 3. AUDIO VAULT RELEASE ACQUISITIONS
-    // ==========================================
     function initReleaseAcquisitions() {
         const acquireButtons = document.querySelectorAll("[data-acquire-id]");
 
@@ -116,7 +100,6 @@
                 const releaseFormat = btn.getAttribute("data-acquire-format") || "FLAC / WAV";
                 const originalText = btn.textContent;
 
-                // Visual button feedback
                 btn.textContent = "✓ MASTER SECURED";
                 btn.classList.add("btn-cyber-magenta");
 
@@ -125,7 +108,6 @@
                     btn.classList.remove("btn-cyber-magenta");
                 }, 2000);
 
-                // Show cyber toast
                 showCyberNotification(
                     `ACQUIRED: ${releaseId} // ${releaseTitle}`,
                     `Encrypted master audio stream unlocked. Master tape added to your local neural cache.`,
@@ -135,9 +117,6 @@
         });
     }
 
-    // ==========================================
-    // 4. TOUR MATRIX PASS RESERVATIONS
-    // ==========================================
     function initTourPasses() {
         const passButtons = document.querySelectorAll("[data-pass-city]");
 
@@ -164,9 +143,6 @@
         });
     }
 
-    // ==========================================
-    // INITIALIZATION ON DOM READY
-    // ==========================================
     document.addEventListener("DOMContentLoaded", () => {
         initClock();
         initReleaseAcquisitions();
